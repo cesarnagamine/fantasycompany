@@ -20,9 +20,8 @@ export const AppLayout = props => {
                     <div className="inner">
                         <h2>Menu</h2>
                         <ul className="links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="elements.html">Elements</a></li>
-                            <li><a href="#">Log Out</a></li>
+                            <li><a href="/">Inicio</a></li>
+                            <li><a href="/portfolio">Portafolio</a></li>
 
                         </ul>
 
@@ -65,7 +64,7 @@ export const AppLayout = props => {
                             <div className="content">
                                 <h2 className="major">Magna arcu feugiat</h2>
                                 <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-                                <a href="#" className="">Más detalles</a>
+                                <a href="/portfolio" className="">Más detalles</a>
                             </div>
                         </div>
                     </section>

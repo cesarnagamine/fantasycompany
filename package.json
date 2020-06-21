@@ -17,10 +17,12 @@
     "nodemailer": "^6.4.10",
     "nodemailer-smtp-transport": "^2.7.4",
     "nodemon": "^2.0.4",
+    "plotly.js": "^1.54.3",
     "react": "^16.13.1",
     "react-datepicker": "^3.0.0",
     "react-dom": "^16.13.1",
     "react-google-login": "^5.1.20",
+    "react-plotly.js": "^2.4.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "sass": "^1.26.8"
@@ -28,9 +30,9 @@
   "scripts": {
     "start": "npm run dev",
     "server": "nodemon server.js",
-    "client": "react-scripts start",
+    "client": "react-scripts --max_old_space_size=4096 start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "react-scripts build",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -44,7 +44,7 @@ export const LandingPage = props => {
 
                         onFailure={() => {
                             auth.logout(() => {
-                                props.history.push("/app");
+                                props.history.push("/");
                             });
                         }}
                     />

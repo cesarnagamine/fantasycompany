@@ -13,7 +13,7 @@ const port = process.env.PORT || 3001;
 //Ejecuta este código automáticamente con la aplicación.
 app.use(express.json());
 app.use(cors());
-app.use('/public', express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 //Routes:
 //Importa archivo 'posts' desde el folder 'routes'

@@ -80,9 +80,9 @@ export const AppLayout = props => {
                         <MailForm />
                         <ul className="contact">
                             <li className="icon solid fa-home">
-                                Untitled Inc<br />
-                    1234 Somewhere Road Suite #2894<br />
-                    Nashville, TN 00000-0000
+                                Fantasy Co.<br />
+                    1234 Nose Donde #2894<br />
+                    Lima, Peru.
                 </li>
                             <li className="icon brands fa-facebook-f"><a href="#">Ken NT</a></li>
                             <li className="icon solid fa-phone">(007) 987-654-321</li>

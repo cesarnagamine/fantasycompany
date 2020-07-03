@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { LandingPage } from "./login.page";
 import { AppLayout } from "./home.page";
-import { Portfolio } from "./Portfolio";
 import { ProtectedRoute } from "./protected.route";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './index.css';
@@ -13,7 +12,6 @@ function AppRouter() {
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <ProtectedRoute exact path="/app" component={AppLayout} />
-        <Route exact path="/portfolio" component={Portfolio} />
         <Route path="*" component={() => "404 NOT FOUND"} />
       </Switch>
     </div>

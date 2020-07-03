@@ -25,6 +25,7 @@
     "react-plotly.js": "^2.4.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-sizeme": "^2.6.12",
     "sass": "^1.26.8"
   },
   "scripts": {
@@ -35,6 +36,9 @@
     "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "engines": {
+    "node": "13.5.0"
   },
   "eslintConfig": {
     "extends": "react-app"

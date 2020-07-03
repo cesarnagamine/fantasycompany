@@ -2,57 +2,34 @@ import React from "react";
 import auth from "./auth";
 import GoogleLogout from 'react-google-login';
 import MailForm from './MailForm'
+import Portfolio from './Portfolio'
+import './App.css'
 
 
 export const AppLayout = props => {
+    console.log(props)
+    console.log(auth)
+
     return (
         <div>
 
             <div id="page-wrapper">
 
-                <header id="header" className="alt">
-                    <h1><a href="index.html">Solid State</a></h1>
+                <header id="header">
                     <nav>
+                        <a href="#banner">Inicio</a>
+                        <a href="#portfolio" >Portafolio</a>
+                        <a href="#footer" >Escríbenos</a>
+                        <a href="/" >Log Out</a>
                     </nav>
                 </header>
-
-                <nav id="menu">
-                    <div className="inner">
-                        <h2>Menu</h2>
-                        <ul className="links">
-                            <li><a href="/">Inicio</a></li>
-                            <li><a href="/portfolio">Portafolio</a></li>
-
-                        </ul>
-
-                    </div>
-                </nav>
 
                 <section id="banner">
                     <div className="inner">
                         <div className="logo"><span className="icon fa-gem"></span></div>
-                        <h2>This is Solid State</h2>
-                        <p>Bienvenido, {auth.authObj.profileObj.givenName}{" "}
-                            {auth.authObj.profileObj.familyName}!</p>
-                        <GoogleLogout
-
-                            buttonText="Logout"
-
-                            render={renderProps => (
-                                <button
-                                    className="logout-button"
-                                    onClick={renderProps.onClick}
-                                >
-                                    Log Out
-                                </button>
-                            )}
-
-                            onSuccess={() => {
-                                auth.logout(() => {
-                                    props.history.push("/");
-                                });
-                            }}
-                        />
+                        <h2>Bienvenido, {auth.authObj.profileObj.givenName}{" "}
+                            {auth.authObj.profileObj.familyName}!</h2>
+                        <p>Te invitamos a ser parte de la forma más transparente de invertir.</p>
                     </div>
                 </section>
 
@@ -60,31 +37,31 @@ export const AppLayout = props => {
 
                     <section id="one" className="wrapper spotlight style1">
                         <div className="inner">
-                            <a href="#" className="image"><img src="images/pic01.jpg" alt="" /></a>
+                            <a href="#portfolio" className="image"><img src="images/chart.jpg" alt="" /></a>
                             <div className="content">
-                                <h2 className="major">Magna arcu feugiat</h2>
-                                <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-                                <a href="/portfolio" className="">Más detalles</a>
+                                <h2 className="major">Inversión con enfoque conservador</h2>
+                                <p>Invierte de manera diversificada, en los mejores activos globales y con un enfoque conservador realmente rentable.</p>
+                                <a href='#portfolio' >Más detalles</a>
                             </div>
                         </div>
                     </section>
 
                     <section id="four" className="wrapper alt style1">
                         <div className="inner">
-                            <h2 className="major">Vitae phasellus</h2>
-                            <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+                            <h2 className="major">Nuestro Socios Estratégicos</h2>
+                            <p>Trabajamos con proveedores de larga experiencia y alta innovación en el mercado para servirles de la manera más eficiente y rápida.</p>
                             <section className="features">
                                 <article>
-                                    <a href="#" className="image"><img src="images/pic04.jpg" alt="" /></a>
-                                    <h3 className="major">Sed feugiat lorem</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-                                    <a href="#" className="special">Learn more</a>
+                                    <a href="https://investor.vanguard.com/corporate-portal/" className="image" target='blank'><img src="images/vanguard.jpg" alt="The Vanguard Group" /></a>
+                                    <h3 className="major">The Vanguard Group</h3>
+                                    <p>Uno de los grupos más relevantes en el mercado financiero global, con más de cinco décadas ofreciendo los mejores productos financieros a un bajo costo.</p>
+                                    <a href="https://investor.vanguard.com/corporate-portal/" className="special" target='blank'>Conócelos aquí</a>
                                 </article>
                                 <article>
-                                    <a href="#" className="image"><img src="images/pic05.jpg" alt="" /></a>
-                                    <h3 className="major">Nisl placerat</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-                                    <a href="#" className="special">Learn more</a>
+                                    <a href="https://www.ally.com/" className="image" target='blank'><img src="images/ally1.jpg" alt="Ally Bank" /></a>
+                                    <h3 className="major">Ally Bank</h3>
+                                    <p>El banco digital con mayor prestigio en el mundo, modelo de innovación en la industria bancaria que nos permitirá servirte en todo momento y en cualquier lugar.</p>
+                                    <a href="https://www.ally.com/" className="special" target='blank'>Conócelos aquí</a>
                                 </article>
 
                             </section>
@@ -93,12 +70,13 @@ export const AppLayout = props => {
                     </section>
 
                 </section>
-
-
+                <section id='portfolio'>
+                    <Portfolio />
+                </section>
                 <section id="footer">
                     <div className="inner">
-                        <h2 className="major">Get in touch</h2>
-                        <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+                        <h2 className="major">Contáctate con nosotros</h2>
+                        <p>Responderemos a su mensaje en menos de 24 horas. Una copia del mensaje será enviado automáticamente a su correo eletrónico. Esperamos poder trabajar pronto en sus planes de inversión y retiro.</p>
                         <MailForm />
                         <ul className="contact">
                             <li className="icon solid fa-home">
@@ -106,14 +84,12 @@ export const AppLayout = props => {
                     1234 Somewhere Road Suite #2894<br />
                     Nashville, TN 00000-0000
                 </li>
-                            <li className="icon solid fa-phone">(000) 000-0000</li>
-                            <li className="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-                            <li className="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-                            <li className="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-                            <li className="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+                            <li className="icon brands fa-facebook-f"><a href="#">Ken NT</a></li>
+                            <li className="icon solid fa-phone">(007) 987-654-321</li>
+                            <li className="icon solid fa-envelope"><a href="#">information@naga.co.tld</a></li>
                         </ul>
                         <ul className="copyright">
-                            <li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                            <li>&copy; César (Ken) Nagamine T. All rights reserved.</li>
                         </ul>
                     </div>
                 </section>

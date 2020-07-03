@@ -18,6 +18,7 @@ class Auth {
     isAuthenticated() {
         return this.isUserLoggedIn;
     }
+
 }
 
 export default new Auth();

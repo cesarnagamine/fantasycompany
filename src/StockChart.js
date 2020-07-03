@@ -1,5 +1,6 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
+import './App.css';
 
 class Stock extends React.Component {
     constructor(props) {
@@ -51,6 +52,7 @@ class Stock extends React.Component {
     }
 
     render() {
+
         return (
             <div>
                 <h1 align='center'>Standard & Poors 500 Index</h1>
@@ -61,14 +63,14 @@ class Stock extends React.Component {
                             y: this.state.stockChartYValues,
                             type: 'scatter',
                             mode: 'lines+markers',
-                            marker: { color: 'red' },
+                            marker: { color: 'blue' },
                         }
                     ]}
                     layout={{
-                        width: 720,
-                        height: 440,
+                        width: undefined,
+                        height: undefined,
                         autosize: true,
-                        title: 'Indice del S&P500 con resultados de los últimos 100 días'
+                        responsive: true,
                     }}
 
                     useResizeHandler={true}

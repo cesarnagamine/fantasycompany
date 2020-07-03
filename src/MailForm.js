@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import auth from './auth';
 
 class MailForm extends React.Component {
     //Initialize the class component State:s
@@ -58,7 +59,7 @@ class MailForm extends React.Component {
             this.setState({
                 sent: false,
             })
-        }, 1500)
+        }, 500)
     }
 
     // JSX Form element (check for properties!):
@@ -103,7 +104,8 @@ class MailForm extends React.Component {
                             <div className="col-12">
 
                                 <ul className="actions">
-                                    <li><input type="submit" value="Enviar" /></li>
+                                    <li><input type="submit" value="Enviar"
+                                    /></li>
                                     <li><input type="reset" value="Borrar" className="alt"
                                         onClick={this.resetForm} /></li>
                                 </ul>

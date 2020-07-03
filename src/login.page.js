@@ -3,17 +3,20 @@ import auth from "./auth";
 import GoogleLogin from 'react-google-login';
 
 export const LandingPage = props => {
+    console.log(props)
+    console.log(auth)
+
     return (
         <div id="page-wrapper">
 
             <section id="banner">
                 <div className="inner">
                     <div className="logo"><span className="icon fa-gem"></span></div>
-                    <h2>This is Solid State</h2>
-                    <p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+                    <h2>Fantasy Co.</h2>
+                    <p>Somos el Fondo Privado de Inversiones más eficiente del mercado nacional.</p>
                     <GoogleLogin
-                        clientId="85357354801-oe7amo7cnqmam9vs5dsgbase3qvvis6e.apps.googleusercontent.com"
 
+                        clientId="85357354801-oe7amo7cnqmam9vs5dsgbase3qvvis6e.apps.googleusercontent.com"
                         buttonText="Login"
                         className="button"
                         onClick={props.onClick}
@@ -26,15 +29,12 @@ export const LandingPage = props => {
                                 onClick={renderProps.onClick}
                                 disabled={renderProps.disabled}
                             >
-                                Log in with Google
+                                Login con Google
                             </button>
                         )}
 
 
                         onSuccess={(res) => {
-                            console.log(res)
-                            console.log(res.profileObj)
-
                             auth.authObj = res;
 
                             auth.login(() => {

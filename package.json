@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "proxy": "https://localhost:3001",
   "private": true,
+  "engines": {
+    "node": "13.5.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -34,9 +37,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "engines": {
-    "node": "13.5.0"
   },
   "eslintConfig": {
     "extends": "react-app"

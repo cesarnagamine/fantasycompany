@@ -15,9 +15,12 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
-    res.render('/');
+
+
+app.get('*', (request, response) => {
+    response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
+
 
 //Routes:
 //Importa archivo 'posts' desde el folder 'routes'
@@ -73,6 +76,11 @@ mongoose.connect(process.env.DB_CONNECTION, {
 }).catch((err) => {
     console.error('Error!', err)
 });
+
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
 
 
 app.listen(port);

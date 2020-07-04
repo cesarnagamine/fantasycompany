@@ -15,6 +15,12 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
+
+//app.get('/', (req, res) => {
+//    res.send('Deployed!');
+//});
+
+
 //Routes:
 //Importa archivo 'posts' desde el folder 'routes'
 //Usa las rutas del archivo 'posts' para el endpoint '/posts'

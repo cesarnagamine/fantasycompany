@@ -15,6 +15,10 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
+app.get('/', (req, res) => {
+    res.render('/');
+});
+
 //Routes:
 //Importa archivo 'posts' desde el folder 'routes'
 //Usa las rutas del archivo 'posts' para el endpoint '/posts'
@@ -69,6 +73,7 @@ mongoose.connect(process.env.DB_CONNECTION, {
 }).catch((err) => {
     console.error('Error!', err)
 });
+
 
 app.listen(port);
 console.log('Listening 3000');

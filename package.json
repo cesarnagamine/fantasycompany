@@ -1,11 +1,7 @@
 {
   "name": "project",
   "version": "0.1.0",
-  "proxy": "http://localhost:3001",
   "private": true,
-  "engines": {
-    "node": "13.5.0"
-  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -21,7 +17,6 @@
     "nodemailer": "^6.4.10",
     "nodemailer-smtp-transport": "^2.7.4",
     "nodemon": "^2.0.4",
-    "path": "^0.12.7",
     "plotly.js": "^1.54.3",
     "react": "^16.13.1",
     "react-datepicker": "^3.0.0",
@@ -36,11 +31,14 @@
   "scripts": {
     "start": "npm run dev",
     "server": "nodemon server.js",
-    "client": "react-scripts start",
+    "client": "react-scripts --max_old_space_size=4096 start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "react-scripts build",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "engines": {
+    "node": "13.5.0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -56,6 +54,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  }
 }

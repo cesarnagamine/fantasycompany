@@ -5,7 +5,6 @@ require('dotenv/config');
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
 const cors = require('cors');
-const path = require('path');
 
 
 const port = process.env.PORT || 3001;
@@ -15,7 +14,6 @@ const port = process.env.PORT || 3001;
 app.use(express.json());
 app.use(cors());
 app.use(express.static(__dirname + '/public'));
-
 
 //Routes:
 //Importa archivo 'posts' desde el folder 'routes'
@@ -71,17 +69,6 @@ mongoose.connect(process.env.DB_CONNECTION, {
 }).catch((err) => {
     console.error('Error!', err)
 });
-
-
-if (process.env.NODE_ENV === 'production') {
-    // Serve any static files
-    app.use(express.static(path.join(__dirname, 'client/build')));
-    // Handle React routing, return all requests to React app
-    app.get('*', function (req, res) {
-        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-    });
-}
-
 
 app.listen(port);
 console.log('Listening 3000');

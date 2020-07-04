@@ -1,6 +1,7 @@
 {
   "name": "project",
   "version": "0.1.0",
+  "main": "login.page.js",
   "proxy": "http://localhost:3001",
   "private": true,
   "engines": {

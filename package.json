@@ -1,8 +1,8 @@
 {
   "name": "project",
   "version": "0.1.0",
-  "main": "login.page.js",
   "proxy": "http://localhost:3001",
+  "main": "login.page.js",
   "private": true,
   "engines": {
     "node": "13.5.0"

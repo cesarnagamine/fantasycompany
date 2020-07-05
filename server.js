@@ -7,8 +7,8 @@ const smtpTransport = require('nodemailer-smtp-transport');
 const cors = require('cors');
 const path = require('path');
 
-
-const port = process.env.PORT || 3001;
+//Changed from 3001 to 5000 for DEPLOYMENT:
+const port = process.env.PORT || 5000;
 
 //Middlewares:
 //Ejecuta este código automáticamente con la aplicación.
@@ -17,9 +17,9 @@ app.use(cors());
 
 
 //ADDED FOR DEPLOYMENT:
-app.use(express.static(path.join(__dirname, './build')))
+app.use(express.static(path.join(__dirname, 'fantasycompany/build')))
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './build'))
+    res.sendFile(path.join(__dirname, 'fantasycompany/build'))
 })
 
 
@@ -81,4 +81,4 @@ mongoose.connect(process.env.DB_CONNECTION, {
 
 
 app.listen(port);
-console.log('Listening 3000');
+console.log(`Listening to ${port}`);

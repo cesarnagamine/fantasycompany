@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/public'));
 
 //ADDED FOR DEPLOYMENT:
 app.get('*', (request, response) => {
-    response.sendFile(path.join(__dirname, '/public', 'index.html'));
+    response.sendFile(path.join(__dirname, 'fantasycompany/build', 'index.html'));
 });
 
 
@@ -79,7 +79,7 @@ mongoose.connect(process.env.DB_CONNECTION, {
 
 //ADDED FOR DEPLOYMENT:
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('/public'));
+    app.use(express.static('fantasycompany/build'));
 }
 
 

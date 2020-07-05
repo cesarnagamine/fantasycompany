@@ -16,9 +16,9 @@ app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
 
-
+//ADDED FOR DEPLOYMENT:
 app.get('*', (request, response) => {
-    response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    response.sendFile(path.join(__dirname, '/public', 'index.html'));
 });
 
 
@@ -77,9 +77,9 @@ mongoose.connect(process.env.DB_CONNECTION, {
     console.error('Error!', err)
 });
 
-
+//ADDED FOR DEPLOYMENT:
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
+    app.use(express.static('/public'));
 }
 
 

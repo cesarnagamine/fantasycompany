@@ -32,7 +32,7 @@ class MailForm extends React.Component {
 
         // AXIOS post to use the post request from nodemailer at 'server.js' file:
         //Changed from 3001 to 5000 for DEPLOYMENT:
-        axios.post('http://localhost:5000/api/form', { user })
+        axios.post('https://localhost:5000/api/form', { user })
             .then(res => {
                 console.log(res);
                 console.log(res.data);
@@ -40,7 +40,7 @@ class MailForm extends React.Component {
 
         // AXIOS post to use the post request from routes on 'routes/posts.js' file:
         //Changed from 3001 to 5000 for DEPLOYMENT:
-        axios.post('http://localhost:5000/posts', { user })
+        axios.post('https://localhost:5000/posts', { user })
             .then(res => {
                 console.log(res);
                 console.log(res.data);

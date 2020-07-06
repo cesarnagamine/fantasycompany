@@ -8,7 +8,7 @@ const cors = require('cors');
 const path = require('path');
 
 //Changed from 3001 to 5000 for DEPLOYMENT:
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3001;
 
 //Middlewares:
 //Ejecuta este código automáticamente con la aplicación.
@@ -17,10 +17,13 @@ app.use(cors());
 
 
 //ADDED FOR DEPLOYMENT:
-app.use(express.static(path.join(__dirname, 'client/build')))
+
+const publicPath = path.join(__dirname, '..', 'public');
+app.use(express.static(publicPath));
+
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build'))
-})
+    res.sendFile(path.join(publicPath, 'index.html'));
+});
 
 
 
@@ -79,10 +82,7 @@ mongoose.connect(process.env.DB_CONNECTION, {
     console.error('Error!', err)
 });
 
-//Added for DEPLOYMENT:
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-}
+
 
 app.listen(port);
 console.log(`Listening to ${port}`);

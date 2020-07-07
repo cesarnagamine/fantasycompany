@@ -31,7 +31,7 @@
   "scripts": {
     "start": "npm run dev",
     "server": "nodemon server.js",
-    "client": "cd client && react-scripts --max_old_space_size=4096 start",
+    "client": "react-scripts --max_old_space_size=4096 start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",

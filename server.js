@@ -18,7 +18,7 @@ app.use(cors());
 
 //ADDED FOR DEPLOYMENT:
 
-const publicPath = path.join(__dirname, '..', 'public');
+const publicPath = path.join(__dirname, 'public');
 app.use(express.static(publicPath));
 
 app.get('*', (req, res) => {

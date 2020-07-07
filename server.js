@@ -31,6 +31,7 @@ app.get('*', (req, res) => {
 //Importa archivo 'posts' desde el folder 'routes'
 //Usa las rutas del archivo 'posts' para el endpoint '/posts'
 const postRoute = require('./routes/posts');
+
 app.use('/posts', postRoute);
 
 //Post request to send emails authomatically using nodemailer
@@ -81,6 +82,17 @@ mongoose.connect(process.env.DB_CONNECTION, {
 }).catch((err) => {
     console.error('Error!', err)
 });
+
+
+//ADDED FOR DEPLOYMENT:
+if (process.env.NODE_ENV === 'production') {
+
+    app.use(express.static('client/build'));
+
+    app.get('*', () => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}
 
 
 

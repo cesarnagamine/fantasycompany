@@ -2,6 +2,7 @@
   "name": "project",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -29,13 +30,12 @@
     "sass": "^1.26.8"
   },
   "scripts": {
-    "start": "npm run dev",
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "cd client && react-scripts start",
+    "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "engines": {
     "node": "13.5.0"

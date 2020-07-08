@@ -2,7 +2,6 @@
   "name": "project",
   "version": "0.1.0",
   "private": true,
-  "main": "server.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -30,12 +29,13 @@
     "sass": "^1.26.8"
   },
   "scripts": {
-    "client-install": "npm install --prefix client",
-    "start": "node server.js",
+    "start": "npm run dev",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client",
+    "client": "cd client && react-scripts --max_old_space_size=4096 start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "build": "react-scripts --max_old_space_size=4096 build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "engines": {
     "node": "13.5.0"

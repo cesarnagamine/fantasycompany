@@ -43,7 +43,7 @@ app.post('/api/form', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'nagamine.soft.dev@gmail.com',
-            pass: 'codingpath2020'
+            pass: ''
         }
     }));
 
